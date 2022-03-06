@@ -1,0 +1,48 @@
+.navbar-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e4e7eb;
+  box-sizing: border-box;
+  width: 1440px;
+  height: 89px;
+}
+.link-element {
+  text-decoration: none;
+}
+.list-element-home {
+  list-style: none;
+  color: #0284c7;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+.list-element {
+  list-style: none;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 24px;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 32vw;
+}
+.home-logo {
+  width: 133px;
+  height: 41px;
+  margin-left: 150px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.logout-button {
+  margin-right: 150px;
+  width: 73px;
+  height: 32px;
+  background: #0284c7;
+  border-radius: 4px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
