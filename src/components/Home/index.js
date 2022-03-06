@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import Slider from 'react-slick'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
@@ -46,7 +47,7 @@ class Home extends Component {
   }
 
   renderLoader = () => (
-    <div data-testid="loader">
+    <div testid="loader">
       <Loader type="ThreeDots" color="#000000" height="50" width="50" />
     </div>
   )
@@ -57,7 +58,7 @@ class Home extends Component {
       dots: false,
       infinite: false,
       speed: 500,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1,
     }
     return (
@@ -76,6 +77,8 @@ class Home extends Component {
     )
   }
 
+  renderFailure = () => <div>hi</div>
+
   renderResult = () => {
     const {apiStatus} = this.state
     switch (apiStatus) {
@@ -88,6 +91,11 @@ class Home extends Component {
       default:
         return null
     }
+  }
+
+  onClickFindBook = () => {
+    const {history} = this.props
+    history.replace('/bookshelves')
   }
 
   render() {
@@ -104,9 +112,15 @@ class Home extends Component {
           <div className="top-rated-book-details">
             <div className="top-rated-book-details-header">
               <h1 className="top-rated-heading">Top Rated Books</h1>
-              <button className="find-book-button" type="button">
-                Find Books
-              </button>
+              <Link to="/bookshelves">
+                <button
+                  className="find-book-button"
+                  onClick={this.onClickFindBook}
+                  type="button"
+                >
+                  Find Books
+                </button>
+              </Link>
             </div>
             {this.renderResult()}
           </div>
