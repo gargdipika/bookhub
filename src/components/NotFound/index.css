@@ -1,0 +1,42 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1440px;
+  height: 1024px;
+}
+.heading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  text-align: center;
+  color: #334155;
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+.para {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 32px;
+  margin-top: 12px;
+  text-align: center;
+  color: #475569;
+  margin-bottom: 0;
+}
+.homepage-button {
+  margin-top: 32px;
+  background: #0284c7;
+  border-radius: 12px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #ffffff;
+  width: 164px;
+  height: 48px;
+  cursor: pointer;
+}
