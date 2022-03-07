@@ -1,9 +1,10 @@
-import React, {Component} from 'react'
+import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import Slider from 'react-slick'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import Header from '../Header'
+import Footer from '../Footer'
 import './index.css'
 
 const statusConstant = {
@@ -66,18 +67,40 @@ class Home extends Component {
         {booksDetail.map(eachBook => {
           const {authorName, title, id, coverPic} = eachBook
           return (
-            <div className="slick-item" key={id}>
-              <img className="cover-pic" src={coverPic} alt="company logo" />
-              <h1 className="title">{title}</h1>
-              <p className="author">{authorName}</p>
-            </div>
+            <Link className="link-element" key={id} to={`/books/${id}`}>
+              <div className="slick-item" key={id}>
+                <img className="cover-pic" src={coverPic} alt="company logo" />
+                <h1 className="title">{title}</h1>
+                <p className="author">{authorName}</p>
+              </div>
+            </Link>
           )
         })}
       </Slider>
     )
   }
 
-  renderFailure = () => <div>hi</div>
+  renderFailure = () => {
+    const onClickTryAgain = () => {
+      this.setState({apiStatus: statusConstant.inProgress}, this.getData)
+    }
+    return (
+      <div className="failure-container">
+        <img
+          src="https://res.cloudinary.com/dfpu8h7gi/image/upload/v1646582637/Group_7522_bqmvgl.png"
+          alt="failure view"
+        />
+        <p className="issue-message">Something went wrong. Please try again</p>
+        <button
+          onClick={onClickTryAgain}
+          className="try-again-button"
+          type="button"
+        >
+          Try Again
+        </button>
+      </div>
+    )
+  }
 
   renderResult = () => {
     const {apiStatus} = this.state
@@ -101,7 +124,7 @@ class Home extends Component {
   render() {
     return (
       <div className="background-home">
-        <Header />
+        <Header active="Home" />
         <div className="home">
           <h1 className="heading-home">Find Your Next Favorite Books?</h1>
           <p className="des-home">
@@ -124,6 +147,7 @@ class Home extends Component {
             </div>
             {this.renderResult()}
           </div>
+          <Footer />
         </div>
       </div>
     )

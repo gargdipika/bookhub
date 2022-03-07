@@ -1,0 +1,55 @@
+.Bookshelves-container {
+  background-color: #e5e5e5;
+  width: 1440px;
+  display: flex;
+
+  margin-top: 0;
+  border: solid #e5e5e5;
+}
+.side-container {
+  margin-top: 48px;
+  margin-left: 150px;
+  padding-left: 32px;
+  background-color: #ffffff;
+  width: 256px;
+  height: 1176px;
+  border: solid #ffffff;
+}
+.bookshelves {
+  height: 32px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  color: #334155;
+  margin-bottom: 16px;
+  margin-top: 32px;
+}
+.unordered-list {
+  padding-left: 0;
+  margin-top: 0;
+}
+.list-style {
+  list-style: none;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #475569;
+}
+.is-click-style {
+  color: #0284c7;
+}
+.success-container {
+  display: flex;
+  flex-direction: column;
+}
+.footer-style {
+  margin-left: 319px;
+  align-self: center;
+}
+.heading-books {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  margin-left: 32px;
+  margin-top: 55px;
+}

@@ -1,0 +1,18 @@
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 166px;
+}
+.icons {
+  width: 18px;
+  height: 21px;
+  margin-right: 24px;
+}
+.contact-us-title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #3d3c3c;
+}

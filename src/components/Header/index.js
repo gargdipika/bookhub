@@ -3,6 +3,15 @@ import Cookies from 'js-cookie'
 import './index.css'
 
 const Header = props => {
+  const {active} = props
+  let specialStyleHome = 'list-element'
+  if (active === 'Home') {
+    specialStyleHome = 'list-element-home'
+  }
+  let specialStyleBookShelves = 'list-element'
+  if (active === 'Bookshelves') {
+    specialStyleBookShelves = 'list-element-home'
+  }
   const onClickLogout = () => {
     const {history} = props
     Cookies.remove('jwt_token')
@@ -20,10 +29,10 @@ const Header = props => {
       </Link>
       <ul className="list">
         <Link to="/" className="link-element">
-          <li className="list-element-home">Home</li>
+          <li className={`${specialStyleHome}`}>Home</li>
         </Link>
         <Link to="/bookshelves" className="link-element">
-          <li className="list-element">Bookshelves</li>
+          <li className={`${specialStyleBookShelves}`}>Bookshelves</li>
         </Link>
         <button type="button" onClick={onClickLogout} className="logout-button">
           Logout
