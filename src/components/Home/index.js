@@ -135,7 +135,7 @@ class Home extends Component {
           <div className="top-rated-book-details">
             <div className="top-rated-book-details-header">
               <h1 className="top-rated-heading">Top Rated Books</h1>
-              <Link to="/bookshelves">
+              <Link to="/shelf">
                 <button
                   className="find-book-button"
                   onClick={this.onClickFindBook}

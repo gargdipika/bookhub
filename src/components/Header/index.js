@@ -31,7 +31,7 @@ const Header = props => {
         <Link to="/" className="link-element">
           <li className={`${specialStyleHome}`}>Home</li>
         </Link>
-        <Link to="/bookshelves" className="link-element">
+        <Link to="/shelf" className="link-element">
           <li className={`${specialStyleBookShelves}`}>Bookshelves</li>
         </Link>
         <button type="button" onClick={onClickLogout} className="logout-button">

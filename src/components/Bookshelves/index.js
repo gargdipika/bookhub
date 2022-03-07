@@ -1,6 +1,8 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
+import {Link} from 'react-router-dom'
+import {BsSearch, BsFillStarFill} from 'react-icons/bs'
 import Header from '../Header'
 import Footer from '../Footer'
 import './index.css'
@@ -79,15 +81,102 @@ class BookShelves extends Component {
     }
   }
 
+  onChangeSearchText = event => {
+    this.setState({searchText: event.target.value})
+  }
+
+  onClickSearchIcon = () => {
+    this.getData()
+  }
+
   renderLoader = () => (
     <div testid="loader">
       <Loader type="ThreeDots" color="#000000" height="50" width="50" />
     </div>
   )
 
+  renderEmpty = () => {
+    const {searchText} = this.state
+
+    return (
+      <div className="empty-container">
+        <img
+          src="https://res.cloudinary.com/dfpu8h7gi/image/upload/v1646666863/Group_uroew1.png"
+          alt="no books"
+        />
+        <p className="empty-text">
+          Your search for {searchText} did not find any matches.
+        </p>
+      </div>
+    )
+  }
+
   renderSuccess = () => {
     const {booksList} = this.state
-    return <div>Success</div>
+    const isEmpty = booksList.length === 0
+
+    return (
+      <ul className="books-list">
+        {isEmpty
+          ? this.renderEmpty()
+          : booksList.map(eachBookDetail => {
+              const {
+                authorName,
+                coverPic,
+                title,
+                id,
+                readStatus,
+                rating,
+              } = eachBookDetail
+              return (
+                <Link to={`//books/${id}`} className="link" key={id}>
+                  <li className="list-style-second" key={id}>
+                    <img
+                      className="cover-pic-style"
+                      src={coverPic}
+                      alt={title}
+                    />
+                    <div>
+                      <h1 className="book-detail-heading">{title}</h1>
+                      <p className="author-book">{authorName}</p>
+                      <div className="rating-container">
+                        <p className="avg-rating">Avg Rating</p>
+                        <BsFillStarFill className="start-icon" />
+                        <p className="rating">{rating}</p>
+                      </div>
+                      <div className="rating-container">
+                        <p className="status-style">Status:</p>
+                        <p className="status">{readStatus}</p>
+                      </div>
+                    </div>
+                  </li>
+                </Link>
+              )
+            })}
+      </ul>
+    )
+  }
+
+  renderFailure = () => {
+    const onClickTryAgain = () => {
+      this.setState({apiStatus: statusConstant.inProgress}, this.getData)
+    }
+    return (
+      <div className="failure-container">
+        <img
+          src="https://res.cloudinary.com/dfpu8h7gi/image/upload/v1646582637/Group_7522_bqmvgl.png"
+          alt="failure view"
+        />
+        <p className="issue-message">Something went wrong. Please try again</p>
+        <button
+          onClick={onClickTryAgain}
+          className="try-again-button"
+          type="button"
+        >
+          Try Again
+        </button>
+      </div>
+    )
   }
 
   renderResult = () => {
@@ -116,14 +205,15 @@ class BookShelves extends Component {
             this.setState({activeTab: eachData.value}, this.getData)
           }
           return (
-            <li
+            <button
+              type="button"
               className={`list-style ${style}`}
               key={eachData.id}
               value={eachData.value}
               onClick={changeActiveTab}
             >
               {eachData.label}
-            </li>
+            </button>
           )
         })}
       </ul>
@@ -150,8 +240,24 @@ class BookShelves extends Component {
         <div className="Bookshelves-container">
           {this.renderSideContainer()}
           <div className="success-container">
-            <div>
+            <div className="books-list">
               <h1 className="heading-books">{heading} Books</h1>
+              <div className="search-container">
+                <input
+                  onChange={this.onChangeSearchText}
+                  className="search-input"
+                  type="search"
+                  placeholder="Search"
+                />
+                <button
+                  testid="searchButton"
+                  className="button"
+                  type="button"
+                  onClick={this.onClickSearchIcon}
+                >
+                  <BsSearch className="search-icon" />
+                </button>
+              </div>
             </div>
             {this.renderResult()}
             <Footer />
