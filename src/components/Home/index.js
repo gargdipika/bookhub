@@ -62,21 +62,52 @@ class Home extends Component {
       slidesToShow: 4,
       slidesToScroll: 1,
     }
+    const settingsMobileView = {
+      dots: false,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+    }
     return (
-      <Slider {...settings}>
-        {booksDetail.map(eachBook => {
-          const {authorName, title, id, coverPic} = eachBook
-          return (
-            <Link className="link-element" key={id} to={`/books/${id}`}>
-              <div className="slick-item" key={id}>
-                <img className="cover-pic" src={coverPic} alt="company logo" />
-                <h1 className="title">{title}</h1>
-                <p className="author">{authorName}</p>
-              </div>
-            </Link>
-          )
-        })}
-      </Slider>
+      <>
+        <Slider className="for-desktop-view" {...settings}>
+          {booksDetail.map(eachBook => {
+            const {authorName, title, id, coverPic} = eachBook
+            return (
+              <Link className="link-element" key={id} to={`/books/${id}`}>
+                <div className="slick-item" key={id}>
+                  <img
+                    className="cover-pic"
+                    src={coverPic}
+                    alt="company logo"
+                  />
+                  <h1 className="title">{title}</h1>
+                  <p className="author">{authorName}</p>
+                </div>
+              </Link>
+            )
+          })}
+        </Slider>
+        <Slider className="for-mobile-view" {...settingsMobileView}>
+          {booksDetail.map(eachBook => {
+            const {authorName, title, id, coverPic} = eachBook
+            return (
+              <Link className="link-element" key={id} to={`/books/${id}`}>
+                <div className="slick-item" key={id}>
+                  <img
+                    className="cover-pic"
+                    src={coverPic}
+                    alt="company logo"
+                  />
+                  <h1 className="title">{title}</h1>
+                  <p className="author">{authorName}</p>
+                </div>
+              </Link>
+            )
+          })}
+        </Slider>
+      </>
     )
   }
 
@@ -132,10 +163,19 @@ class Home extends Component {
             enjoyed in the past, and we will give you surprisingly insightful
             recommendations.
           </p>
+          <Link className="find-book-mobile" to="/shelf">
+            <button
+              className="find-book-button"
+              onClick={this.onClickFindBook}
+              type="button"
+            >
+              Find Books
+            </button>
+          </Link>
           <div className="top-rated-book-details">
             <div className="top-rated-book-details-header">
               <h1 className="top-rated-heading">Top Rated Books</h1>
-              <Link to="/shelf">
+              <Link className="find-books-desktop" to="/shelf">
                 <button
                   className="find-book-button"
                   onClick={this.onClickFindBook}

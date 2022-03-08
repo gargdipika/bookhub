@@ -115,4 +115,11 @@
     width: 312px;
     margin-bottom: 56px;
   }
+  .error-message {
+    font-size: 14px;
+    line-height: 18px;
+    color: red;
+    margin-left: 24px;
+    margin-top: 8px;
+  }
 }
