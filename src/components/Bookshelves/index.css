@@ -165,12 +165,20 @@
 }
 .button {
   border: none;
+  height: 34px;
+  width: 52px;
+  background-color: transparent;
+  padding: 0;
 }
 .empty-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  width: 1000px;
+  height: 500px;
+  margin-bottom: 0;
+  padding-left: 90px;
 }
 .empty-text {
   font-style: normal;

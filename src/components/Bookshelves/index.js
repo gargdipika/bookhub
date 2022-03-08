@@ -129,7 +129,7 @@ class BookShelves extends Component {
                 rating,
               } = eachBookDetail
               return (
-                <Link to={`//books/${id}`} className="link" key={id}>
+                <Link to={`/books/${id}`} className="link" key={id}>
                   <li className="list-style-second" key={id}>
                     <img
                       className="cover-pic-style"

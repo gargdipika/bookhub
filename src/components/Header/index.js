@@ -19,26 +19,32 @@ const Header = props => {
   }
 
   return (
-    <nav className="navbar-element">
-      <Link to="/">
-        <img
-          className="home-logo"
-          src="https://res.cloudinary.com/dfpu8h7gi/image/upload/v1646301304/Group_7731_oo0h5u.png"
-          alt="website logo"
-        />
-      </Link>
-      <ul className="list">
-        <Link to="/" className="link-element">
-          <li className={`${specialStyleHome}`}>Home</li>
+    <>
+      <nav className="navbar-element">
+        <Link to="/">
+          <img
+            className="home-logo"
+            src="https://res.cloudinary.com/dfpu8h7gi/image/upload/v1646301304/Group_7731_oo0h5u.png"
+            alt="website logo"
+          />
         </Link>
-        <Link to="/shelf" className="link-element">
-          <li className={`${specialStyleBookShelves}`}>Bookshelves</li>
-        </Link>
-        <button type="button" onClick={onClickLogout} className="logout-button">
-          Logout
-        </button>
-      </ul>
-    </nav>
+        <ul className="list">
+          <Link to="/" className="link-element">
+            <li className={`${specialStyleHome}`}>Home</li>
+          </Link>
+          <Link to="/shelf" className="link-element">
+            <li className={`${specialStyleBookShelves}`}>Bookshelves</li>
+          </Link>
+          <button
+            type="button"
+            onClick={onClickLogout}
+            className="logout-button"
+          >
+            Logout
+          </button>
+        </ul>
+      </nav>
+    </>
   )
 }
 
