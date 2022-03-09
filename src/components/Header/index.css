@@ -79,6 +79,7 @@
   }
   .list-icon {
     display: flex;
+    margin-right: 22.4px;
   }
   .home-logo {
     margin-left: 24px;

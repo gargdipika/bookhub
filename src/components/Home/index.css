@@ -1,6 +1,6 @@
 .background-home {
   height: 1024px;
-  width: 1440px;
+  width: 100vw;
 }
 .home {
   background-color: #e5e5e5;
@@ -117,11 +117,11 @@
 }
 @media screen and (max-width: 360px) and (max-height: 640px) {
   .background-home {
-    width: 360px;
+    width: 100vw;
     height: 640px;
   }
   .home {
-    width: 360px;
+    width: 100vw;
   }
   .heading-home {
     margin-left: 24px;
@@ -134,7 +134,7 @@
     margin-left: 24px;
     font-size: 14px;
     margin-right: 24px;
-    width: 336px;
+    width: 95vw;
   }
   .find-book-mobile {
     display: flex;
@@ -144,7 +144,7 @@
     margin-left: 24px;
   }
   .top-rated-book-details {
-    width: 360px;
+    width: 100vw;
     height: 203px;
     margin-left: 0;
     border-radius: 0;
