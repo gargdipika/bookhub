@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 1440px;
+  width: 100vw;
   height: 1024px;
 }
 .heading {
@@ -39,4 +39,16 @@
   width: 164px;
   height: 48px;
   cursor: pointer;
+}
+@media screen and (max-width: 576px) {
+  .not-found-container {
+    height: 640px;
+  }
+  .para {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
 }

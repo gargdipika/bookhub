@@ -136,7 +136,7 @@ class BookShelves extends Component {
                       src={coverPic}
                       alt={title}
                     />
-                    <div>
+                    <div className="success-inside-container">
                       <h1 className="book-detail-heading">{title}</h1>
                       <p className="author-book">{authorName}</p>
                       <div className="rating-container">
@@ -238,11 +238,29 @@ class BookShelves extends Component {
       <div>
         <Header active="Bookshelves" />
         <div className="Bookshelves-container">
+          <div className="search-container for-mobile-view">
+            <input
+              onChange={this.onChangeSearchText}
+              className="search-input"
+              type="search"
+              placeholder="Search"
+            />
+            <button
+              testid="searchButton"
+              className="button"
+              type="button"
+              onClick={this.onClickSearchIcon}
+            >
+              <BsSearch className="search-icon" />
+            </button>
+          </div>
           {this.renderSideContainer()}
           <div className="success-container">
-            <div className="books-list">
-              <h1 className="heading-books">{heading} Books</h1>
-              <div className="search-container">
+            <div className="books-list for-desktop-view">
+              <h1 className="heading-books for-desktop-view">
+                {heading} Books
+              </h1>
+              <div className="search-container for-desktop-view">
                 <input
                   onChange={this.onChangeSearchText}
                   className="search-input"
