@@ -58,8 +58,8 @@ class BookDetail extends Component {
   }
 
   renderLoader = () => (
-    <div testid="loader">
-      <Loader type="ThreeDots" color="#000000" height="50" width="50" />
+    <div testid="loader" className="loader">
+      <Loader type="Oval" color="#0284c7" height="50" width="50" />
     </div>
   )
 

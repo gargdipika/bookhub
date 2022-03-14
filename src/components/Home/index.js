@@ -48,8 +48,8 @@ class Home extends Component {
   }
 
   renderLoader = () => (
-    <div testid="loader">
-      <Loader type="ThreeDots" color="#000000" height="50" width="50" />
+    <div testid="loader" className="loader">
+      <Loader type="Oval" color="#0284c7" height="50" width="50" />
     </div>
   )
 
@@ -76,7 +76,7 @@ class Home extends Component {
             const {authorName, title, id, coverPic} = eachBook
             return (
               <Link className="link-element" key={id} to={`/books/${id}`}>
-                <div className="slick-item" key={id}>
+                <div key={id}>
                   <img
                     className="cover-pic"
                     src={coverPic}
@@ -163,7 +163,7 @@ class Home extends Component {
             enjoyed in the past, and we will give you surprisingly insightful
             recommendations.
           </p>
-          <Link className="find-book-mobile" to="/shelf">
+          <Link className="find-book-mobile link-element" to="/shelf">
             <button
               className="find-book-button"
               onClick={this.onClickFindBook}

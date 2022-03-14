@@ -90,8 +90,8 @@ class BookShelves extends Component {
   }
 
   renderLoader = () => (
-    <div testid="loader">
-      <Loader type="ThreeDots" color="#000000" height="50" width="50" />
+    <div testid="loader" className="loader">
+      <Loader type="Oval" color="#0284c7" height="50" width="50" />
     </div>
   )
 
@@ -241,7 +241,7 @@ class BookShelves extends Component {
           <div className="search-container for-mobile-view">
             <input
               onChange={this.onChangeSearchText}
-              className="search-input"
+              className="search-input "
               type="search"
               placeholder="Search"
             />
@@ -277,7 +277,9 @@ class BookShelves extends Component {
                 </button>
               </div>
             </div>
-            {this.renderResult()}
+            <div className="bottom-container-book-shelves">
+              {this.renderResult()}
+            </div>{' '}
             <Footer />
           </div>
         </div>
