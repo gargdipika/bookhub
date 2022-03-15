@@ -188,9 +188,33 @@
 .bottom-container-book-shelves {
   margin-top: 30px;
 }
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50vw;
+  height: 500px;
+  margin-bottom: 0;
+  padding-left: 90px;
+}
+.empty-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #334155;
+}
+
 @media screen and (max-width: 1200px) and (min-width: 576px) {
   .side-container {
     width: 200px;
+  }
+  .empty-container {
+    width: 30vw;
+  }
+  .books-list {
+    width: 55vw;
   }
 }
 @media screen and (max-width: 751px) {
@@ -273,22 +297,7 @@
     margin-left: 24px;
     padding-left: 0;
   }
-}
-
-.empty-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  width: 1000px;
-  height: 500px;
-  margin-bottom: 0;
-  padding-left: 90px;
-}
-.empty-text {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 29px;
-  color: #334155;
+  .empty-container {
+    width: 80vw;
+  }
 }
